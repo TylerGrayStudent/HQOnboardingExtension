@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "HQ Onboarding",
+  "version": "1.2",
+  "description": "Extension to help with onboarding new hires",
+  "permissions": [
+    "cookies",
+    "tabs",
+    "webRequest",
+    "webRequestBlocking",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_icon": {
+      "16": "icons/icon16.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
